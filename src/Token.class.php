@@ -17,7 +17,7 @@ class Token {
 	 * @throws \Exception
 	 */
 	public static function Get( $length = 32 ) {
-		$out = base64_encode( random_bytes( $length ) );
+		$out = Base64::Encode( random_bytes( $length ) );
 
 		return $out;
 	}
