@@ -3,10 +3,10 @@
 namespace METADATA\Kernel;
 
 /**
- * Class File
+ * Class Storage
  * @package METADATA\Kernel
  */
-class File {
+class Storage {
 
 	/**
 	 * @param $src

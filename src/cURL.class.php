@@ -35,12 +35,11 @@ class cURL {
 	 * cURL: JSON cache.
 	 *
 	 * @param $url
-	 * @param string $path
 	 *
 	 * @return mixed
 	 */
 	public static function cURLCache( $url ) {
-		$path    = Server::DOCUMENT_ROOT() . 'engine/cache/';
+		$path    = Route::DOCUMENT_ROOT() . 'engine/cache/';
 		$cache   = $path . Hash::Get( 'md5', $url );
 		$refresh = 60 * 60;
 		$devMode = 0;
@@ -54,7 +53,7 @@ class cURL {
 			fwrite( $handle, $json_cache );
 			fclose( $handle );
 		} else {
-			$out = JSON::Decode( File::Get( $cache ) );
+			$out = JSON::Decode( Storage::Get( $cache ) );
 		}
 
 		return $out;

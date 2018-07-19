@@ -3,10 +3,10 @@
 namespace METADATA\Kernel;
 
 /**
- * Class Server
+ * Class Route
  * @package METADATA\Kernel
  */
-class Server {
+class Route {
 
 	/**
 	 * @return mixed
