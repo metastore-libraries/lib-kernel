@@ -3,10 +3,22 @@
 namespace METADATA\Kernel;
 
 /**
- * Class Checksum
+ * Class File
  * @package METADATA\Kernel
  */
-class Checksum {
+class File {
+
+	/**
+	 * @param $form
+	 * @param $meta
+	 *
+	 * @return mixed
+	 */
+	public static function Info( $form, $meta ) {
+		$out = $_FILES[ $form ][ $meta ];
+
+		return $out;
+	}
 
 	/**
 	 * Calculate the md5 hash of a file.
