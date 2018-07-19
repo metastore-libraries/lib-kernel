@@ -54,7 +54,7 @@ class cURL {
 			fwrite( $handle, $json_cache );
 			fclose( $handle );
 		} else {
-			$out = JSON::Decode( $cache );
+			$out = JSON::Decode( File::Get( $cache ) );
 		}
 
 		return $out;

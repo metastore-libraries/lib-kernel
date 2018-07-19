@@ -9,6 +9,17 @@ namespace METADATA\Kernel;
 class File {
 
 	/**
+	 * @param $src
+	 *
+	 * @return bool|string
+	 */
+	public static function Get( $src ) {
+		$out = file_get_contents( $src );
+
+		return $out;
+	}
+
+	/**
 	 * @param $form
 	 * @param $meta
 	 *
