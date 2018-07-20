@@ -30,33 +30,4 @@ class cURL {
 
 		return $out;
 	}
-
-	/**
-	 * cURL: JSON cache.
-	 *
-	 * @param $url
-	 *
-	 * @return mixed
-	 */
-	public static function cache( $url ) {
-		$path    = Route::DOCUMENT_ROOT() . 'engine/cache/';
-		$cache   = $path . Hash::get( 'md5', $url );
-		$refresh = 60 * 60;
-		$devMode = 0;
-
-		if ( ( ( $refresh ) < ( time() - filectime( $cache ) ) || filesize( $cache ) == 0 ) || $devMode ) {
-			$out = Parser::json( self::get( $url ) );
-
-			$handle = fopen( $cache, 'wb' ) or die( 'no fopen' );
-			$json_cache = self::get( $url );
-
-			fwrite( $handle, $json_cache );
-			fclose( $handle );
-		} else {
-			$out = Parser::json( Storage::get( $cache ) );
-		}
-
-		return $out;
-	}
-
 }

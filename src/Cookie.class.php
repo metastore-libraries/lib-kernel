@@ -11,19 +11,15 @@ class Cookie {
 	/**
 	 * Cookie: save value.
 	 *
-	 * @param $type
 	 * @param $name
 	 * @param $value
 	 * @param string $time
+	 * @param $type
 	 *
 	 * @return bool
 	 */
-	public static function set( $type, $name, $value, $time = '+30 days' ) {
-		if ( $type === 'form' ) {
-			$out = setcookie( $name, Parser::clear( $_POST[ $value ] ), strtotime( $time ) );
-		} else {
-			$out = setcookie( $name, Parser::clear( $value ) );
-		}
+	public static function set( $name, $value, $time = '+30 days', $type ) {
+		$out = ( $type === 'form' ) ? setcookie( $name, Parser::clear( $_POST[ $value ] ), strtotime( $time ) ) : setcookie( $name, Parser::clear( $value ) );
 
 		return $out;
 	}
