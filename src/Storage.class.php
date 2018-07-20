@@ -13,7 +13,7 @@ class Storage {
 	 *
 	 * @return bool|string
 	 */
-	public static function Get( $src ) {
+	public static function get( $src ) {
 		$out = file_get_contents( $src );
 
 		return $out;
@@ -25,7 +25,7 @@ class Storage {
 	 *
 	 * @return mixed
 	 */
-	public static function Info( $form, $meta ) {
+	public static function info( $form, $meta ) {
 		$out = $_FILES[ $form ][ $meta ];
 
 		return $out;
@@ -38,7 +38,7 @@ class Storage {
 	 *
 	 * @return string
 	 */
-	public static function MD5( $file ) {
+	public static function md5( $file ) {
 		$out = md5_file( $file );
 
 		return $out;
@@ -51,7 +51,7 @@ class Storage {
 	 *
 	 * @return string
 	 */
-	public static function SHA1( $file ) {
+	public static function sha1( $file ) {
 		$out = sha1_file( $file );
 
 		return $out;

@@ -9,13 +9,13 @@ namespace METADATA\Kernel;
 class cURL {
 
 	/**
-	 * cURL: Get JSON.
+	 * cURL: Get.
 	 *
 	 * @param $url
 	 *
 	 * @return mixed
 	 */
-	public static function cURL( $url ) {
+	public static function get( $url ) {
 		$url = urlencode( $url );
 		$ch = curl_init() or die( 'curl issue' );
 
@@ -38,22 +38,22 @@ class cURL {
 	 *
 	 * @return mixed
 	 */
-	public static function cURLCache( $url ) {
+	public static function cache( $url ) {
 		$path    = Route::DOCUMENT_ROOT() . 'engine/cache/';
-		$cache   = $path . Hash::Get( 'md5', $url );
+		$cache   = $path . Hash::get( 'md5', $url );
 		$refresh = 60 * 60;
 		$devMode = 0;
 
 		if ( ( ( $refresh ) < ( time() - filectime( $cache ) ) || filesize( $cache ) == 0 ) || $devMode ) {
-			$out = JSON::Decode( self::cURL( $url ) );
+			$out = Json::decode( self::get( $url ) );
 
 			$handle = fopen( $cache, 'wb' ) or die( 'no fopen' );
-			$json_cache = self::cURL( $url );
+			$json_cache = self::get( $url );
 
 			fwrite( $handle, $json_cache );
 			fclose( $handle );
 		} else {
-			$out = JSON::Decode( Storage::Get( $cache ) );
+			$out = Json::decode( Storage::get( $cache ) );
 		}
 
 		return $out;

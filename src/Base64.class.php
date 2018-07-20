@@ -13,7 +13,7 @@ class Base64 {
 	 *
 	 * @return bool|string
 	 */
-	public static function Decode( $data ) {
+	public static function decode( $data ) {
 		$out = base64_decode( $data );
 
 		return $out;
@@ -24,7 +24,7 @@ class Base64 {
 	 *
 	 * @return string
 	 */
-	public static function Encode( $data ) {
+	public static function encode( $data ) {
 		$out = base64_encode( $data );
 
 		return $out;

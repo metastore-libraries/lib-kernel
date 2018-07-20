@@ -3,10 +3,10 @@
 namespace METADATA\Kernel;
 
 /**
- * Class JSON
+ * Class Json
  * @package METADATA\Kernel
  */
-class JSON {
+class Json {
 
 	/**
 	 * Decode JSON data.
@@ -15,7 +15,7 @@ class JSON {
 	 *
 	 * @return mixed
 	 */
-	public static function Decode( $src ) {
+	public static function decode( $src ) {
 		$out = json_decode( $src, true );
 
 		return $out;
@@ -28,7 +28,7 @@ class JSON {
 	 *
 	 * @return mixed
 	 */
-	public static function Encode( $src ) {
+	public static function encode( $src ) {
 		$out = json_encode( $src, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT );
 
 		return $out;

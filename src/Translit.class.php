@@ -16,7 +16,7 @@ class Translit {
 	 *
 	 * @return string
 	 */
-	public static function Get( $string, $rule = 'Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();' ) {
+	public static function get( $string, $rule = 'Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();' ) {
 		$trans  = \Transliterator::create( $rule );
 		$string = preg_replace( '/[-\s]+/', '-', $trans->transliterate( $string ) );
 		$out    = trim( $string, '-' );

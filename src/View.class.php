@@ -10,12 +10,12 @@ class View {
 
 	/**
 	 * @param $template
-	 * @param $theme
+	 * @param $type
 	 *
 	 * @return mixed
 	 */
-	public static function Get( $template, $theme ) {
-		$out = require( Route::DOCUMENT_ROOT() . 'themes/' . $theme . '/templates/' . $template . '.php' );
+	public static function get( $template, $type ) {
+		$out = require( Route::DOCUMENT_ROOT() . 'app/views/' . $type . '/' . $template . '.php' );
 
 		return $out;
 	}

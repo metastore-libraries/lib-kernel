@@ -14,7 +14,7 @@ class Hash {
 	 *
 	 * @return string
 	 */
-	public static function Get( $algo, $data ) {
+	public static function get( $algo, $data ) {
 		$out = hash( $algo, $data );
 
 		return $out;
@@ -29,8 +29,8 @@ class Hash {
 	 * @return string
 	 * @throws \Exception
 	 */
-	public static function Generator( $algo = 'crc32b', $length = 32 ) {
-		$out = self::Get( $algo, Timestamp::Get() . uniqid( bin2hex( random_bytes( $length ) ), true ) );
+	public static function generator( $algo = 'crc32b', $length = 32 ) {
+		$out = self::get( $algo, Timestamp::get() . uniqid( bin2hex( random_bytes( $length ) ), true ) );
 
 		return $out;
 	}

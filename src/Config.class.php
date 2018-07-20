@@ -13,9 +13,9 @@ class Config {
 	 *
 	 * @return mixed
 	 */
-	public static function Get( $file ) {
-		$file = Storage::Get( Route::DOCUMENT_ROOT() . 'engine/config/' . $file . '.json' );
-		$out  = JSON::Decode( $file );
+	public static function get( $file ) {
+		$file = Storage::get( Route::DOCUMENT_ROOT() . 'engine/config/' . $file . '.json' );
+		$out  = JSON::decode( $file );
 
 		return $out;
 	}

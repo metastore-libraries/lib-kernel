@@ -12,19 +12,19 @@ class Session {
 	 * @param $savePath
 	 * @param $sessionName
 	 */
-	public static function Open( $savePath, $sessionName ) {
+	public static function open( $savePath, $sessionName ) {
 	}
 
 	/**
 	 *
 	 */
-	public static function Close() {
+	public static function close() {
 	}
 
 	/**
 	 * @param $sessionID
 	 */
-	public static function Read( $sessionID ) {
+	public static function read( $sessionID ) {
 	}
 
 
@@ -32,13 +32,13 @@ class Session {
 	 * @param $sessionID
 	 * @param $data
 	 */
-	public static function Write( $sessionID, $data ) {
+	public static function write( $sessionID, $data ) {
 	}
 
 
 	/**
 	 * @param $sessionID
 	 */
-	public static function Destroy( $sessionID ) {
+	public static function destroy( $sessionID ) {
 	}
 }

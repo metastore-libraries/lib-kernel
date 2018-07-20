@@ -13,8 +13,8 @@ class Request {
 	 *
 	 * @return string
 	 */
-	public static function Get( $id ) {
-		$out = Parser::Clear( $_GET[ $id ] );
+	public static function get( $id ) {
+		$out = Parser::clear( $_GET[ $id ] );
 
 		return $out;
 	}
@@ -24,8 +24,8 @@ class Request {
 	 *
 	 * @return string
 	 */
-	public static function Post( $id ) {
-		$out = Parser::Clear( $_POST[ $id ] );
+	public static function post( $id ) {
+		$out = Parser::clear( $_POST[ $id ] );
 
 		return $out;
 	}

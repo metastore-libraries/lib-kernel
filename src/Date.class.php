@@ -14,7 +14,7 @@ class Date {
 	 *
 	 * @return false|string
 	 */
-	public static function Convert( $format = 'Y-m-d H:i:s', $date ) {
+	public static function convert( $format = 'Y-m-d H:i:s', $date ) {
 		$out = date( $format, strtotime( $date ) );
 
 		return $out;

@@ -13,7 +13,7 @@ class Timestamp {
 	 *
 	 * @return int
 	 */
-	public static function Get() {
+	public static function get() {
 		$date = new \DateTime();
 		$out  = $date->getTimestamp();
 
