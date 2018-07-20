@@ -9,6 +9,17 @@ namespace METADATA\Kernel;
 class Translit {
 
 	/**
+	 * @param $rule
+	 *
+	 * @return \Transliterator
+	 */
+	private static function translit( $rule ) {
+		$out = \Transliterator::create( $rule );
+
+		return $out;
+	}
+
+	/**
 	 * Transliterate a string.
 	 *
 	 * @param $string
@@ -17,7 +28,7 @@ class Translit {
 	 * @return string
 	 */
 	public static function get( $string, $rule = 'Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();' ) {
-		$trans  = \Transliterator::create( $rule );
+		$trans  = self::translit( $rule );
 		$string = preg_replace( '/[-\s]+/', '-', $trans->transliterate( $string ) );
 		$out    = trim( $string, '-' );
 

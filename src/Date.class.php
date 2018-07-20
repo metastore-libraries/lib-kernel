@@ -9,6 +9,15 @@ namespace METADATA\Kernel;
 class Date {
 
 	/**
+	 * @return \DateTime
+	 */
+	private static function date() {
+		$out = new \DateTime();
+
+		return $out;
+	}
+
+	/**
 	 * @param string $format
 	 * @param $date
 	 *
@@ -26,8 +35,7 @@ class Date {
 	 * @return int
 	 */
 	public static function timestamp() {
-		$date = new \DateTime();
-		$out  = $date->getTimestamp();
+		$out = self::date()->getTimestamp();
 
 		return $out;
 	}
