@@ -20,4 +20,16 @@ class Date {
 		return $out;
 	}
 
+	/**
+	 * UNIX timestamp.
+	 *
+	 * @return int
+	 */
+	public static function timestamp() {
+		$date = new \DateTime();
+		$out  = $date->getTimestamp();
+
+		return $out;
+	}
+
 }

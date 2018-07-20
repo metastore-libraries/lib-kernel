@@ -30,7 +30,19 @@ class Hash {
 	 * @throws \Exception
 	 */
 	public static function generator( $algo = 'crc32b', $length = 32 ) {
-		$out = self::get( $algo, Timestamp::get() . uniqid( bin2hex( random_bytes( $length ) ), true ) );
+		$out = self::get( $algo, Date::timestamp() . uniqid( bin2hex( random_bytes( $length ) ), true ) );
+
+		return $out;
+	}
+
+	/**
+	 * @param $data
+	 * @param $encode
+	 *
+	 * @return bool|string
+	 */
+	public static function base64( $data, $encode = 0 ) {
+		$out = $encode ? base64_encode( $data ) : base64_decode( $data );
 
 		return $out;
 	}

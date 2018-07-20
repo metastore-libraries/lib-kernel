@@ -45,7 +45,7 @@ class cURL {
 		$devMode = 0;
 
 		if ( ( ( $refresh ) < ( time() - filectime( $cache ) ) || filesize( $cache ) == 0 ) || $devMode ) {
-			$out = Json::decode( self::get( $url ) );
+			$out = Parser::json( self::get( $url ) );
 
 			$handle = fopen( $cache, 'wb' ) or die( 'no fopen' );
 			$json_cache = self::get( $url );
@@ -53,7 +53,7 @@ class cURL {
 			fwrite( $handle, $json_cache );
 			fclose( $handle );
 		} else {
-			$out = Json::decode( Storage::get( $cache ) );
+			$out = Parser::json( Storage::get( $cache ) );
 		}
 
 		return $out;
