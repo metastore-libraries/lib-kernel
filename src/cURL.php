@@ -9,13 +9,13 @@ namespace METASTORE\App\Kernel;
 class cURL {
 
 	/**
-	 * cURL: Get.
+	 * cURL: Get URL.
 	 *
 	 * @param $url
 	 *
 	 * @return mixed
 	 */
-	public static function get( $url ) {
+	public static function url( $url ) {
 		$ch = curl_init() or die( 'curl issue' );
 
 		curl_setopt( $ch, CURLOPT_URL, $url );
@@ -29,4 +29,34 @@ class cURL {
 
 		return $out;
 	}
+
+	/**
+	 * cURL: Get JSON.
+	 *
+	 * @param $url
+	 * @param int $cache
+	 * @param float|int $time
+	 *
+	 * @return mixed|string
+	 */
+	public static function getJSON( $url, $cache = 1, $time = 60 * 60 ) {
+		$cachePath = Route::DOCUMENT_ROOT() . 'storage/cache/';
+		$cacheFile = $cachePath . Hash::get( 'md5', $url );
+		$refresh   = $time;
+
+		if ( ( ( $refresh ) < ( time() - filectime( $cacheFile ) ) || filesize( $cacheFile ) == 0 ) || ! $cache ) {
+			$out = Parser::json( self::url( $url ) );
+
+			$handle = fopen( $cacheFile, 'wb' ) or die( 'no fopen' );
+			$json_cache = self::url( $url );
+
+			fwrite( $handle, $json_cache );
+			fclose( $handle );
+		} else {
+			$out = Parser::json( Storage::get( $cacheFile ) );
+		}
+
+		return $out;
+	}
+
 }

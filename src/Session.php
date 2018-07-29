@@ -51,4 +51,5 @@ class Session {
 	public static function gc( $lifetime ) {
 		( new \SessionHandler )->gc( $lifetime );
 	}
+
 }
