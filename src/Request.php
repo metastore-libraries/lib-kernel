@@ -14,7 +14,7 @@ class Request {
 	 * @return string
 	 */
 	public static function get( $id ) {
-		$out = Parser::clear( $_GET[ $id ] );
+		$out = Parser::clear( $_GET[ $id ] ?? '' ?: '' );
 
 		return $out;
 	}

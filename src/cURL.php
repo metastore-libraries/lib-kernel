@@ -16,7 +16,6 @@ class cURL {
 	 * @return mixed
 	 */
 	public static function get( $url ) {
-		$url = urlencode( $url );
 		$ch = curl_init() or die( 'curl issue' );
 
 		curl_setopt( $ch, CURLOPT_URL, $url );
