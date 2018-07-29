@@ -31,5 +31,11 @@
 		"psr-4": {
 			"METASTORE\\Kernel\\": "src/"
 		}
-	}
+	},
+	"config": {
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
