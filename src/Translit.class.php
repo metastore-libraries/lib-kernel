@@ -1,10 +1,10 @@
 <?php
 
-namespace METASTORE\Kernel;
+namespace METASTORE\App\Kernel;
 
 /**
  * Class Translit
- * @package METASTORE\Kernel
+ * @package METASTORE\App\Kernel
  */
 class Translit {
 

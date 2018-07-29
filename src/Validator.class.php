@@ -1,10 +1,10 @@
 <?php
 
-namespace METASTORE\Kernel;
+namespace METASTORE\App\Kernel;
 
 /**
  * Class Validator
- * @package METASTORE\Kernel
+ * @package METASTORE\App\Kernel
  */
 class Validator {
 }

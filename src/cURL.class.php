@@ -1,10 +1,10 @@
 <?php
 
-namespace METASTORE\Kernel;
+namespace METASTORE\App\Kernel;
 
 /**
  * Class cURL
- * @package METASTORE\Kernel
+ * @package METASTORE\App\Kernel
  */
 class cURL {
 

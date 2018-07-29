@@ -29,7 +29,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"METASTORE\\Kernel\\": "src/"
+			"METASTORE\\App\\Kernel\\": "src/"
 		}
 	},
 	"config": {

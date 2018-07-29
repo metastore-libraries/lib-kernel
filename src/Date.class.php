@@ -1,10 +1,10 @@
 <?php
 
-namespace METASTORE\Kernel;
+namespace METASTORE\App\Kernel;
 
 /**
  * Class Date
- * @package METASTORE\Kernel
+ * @package METASTORE\App\Kernel
  */
 class Date {
 
