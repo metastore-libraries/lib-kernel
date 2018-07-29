@@ -15,7 +15,7 @@ class View {
 	 * @return mixed
 	 */
 	public static function get( $template, $type ) {
-		$out = require( Route::DOCUMENT_ROOT() . 'app/resources/views/' . $type . '/' . $template . '.php' );
+		$out = require( Route::DOCUMENT_ROOT() . 'resources/views/' . $type . '/' . $template . '.php' );
 
 		return $out;
 	}
