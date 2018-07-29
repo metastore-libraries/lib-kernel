@@ -23,7 +23,7 @@ class Date {
 	 *
 	 * @return false|string
 	 */
-	public static function convert( $format = 'Y-m-d H:i:s', $date ) {
+	public static function convert( $date, $format = 'Y-m-d H:i:s' ) {
 		$out = date( $format, strtotime( $date ) );
 
 		return $out;

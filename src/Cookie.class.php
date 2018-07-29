@@ -18,7 +18,7 @@ class Cookie {
 	 *
 	 * @return bool
 	 */
-	public static function set( $name, $value, $time = '+30 days', $type ) {
+	public static function set( $name, $value, $type, $time = '+30 days' ) {
 		$out = ( $type === 'form' ) ? setcookie( $name, Parser::clear( $_POST[ $value ] ), strtotime( $time ) ) : setcookie( $name, Parser::clear( $value ) );
 
 		return $out;
