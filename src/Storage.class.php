@@ -1,10 +1,10 @@
 <?php
 
-namespace METADATA\Kernel;
+namespace METASTORE\Kernel;
 
 /**
  * Class Storage
- * @package METADATA\Kernel
+ * @package METASTORE\Kernel
  */
 class Storage {
 
