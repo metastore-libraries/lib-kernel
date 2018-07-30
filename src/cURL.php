@@ -39,10 +39,10 @@ class cURL {
 	 *
 	 * @return mixed|string
 	 */
-	public static function getJSON( $url, $cache = 1, $time = '+1 hour' ) {
+	public static function getJSON( $url, $cache = 1, $time = 60 * 60 ) {
 		$cachePath = Route::DOCUMENT_ROOT() . 'storage/cache/';
 		$cacheFile = $cachePath . Hash::get( 'md5', $url );
-		$refresh   = strtotime( $time );
+		$refresh   = $time;
 
 		if ( ( ( $refresh ) < ( time() - filectime( $cacheFile ) ) || filesize( $cacheFile ) == 0 ) || ! $cache ) {
 			$out = Parser::json( self::url( $url ) );
