@@ -35,4 +35,13 @@ class Route {
 		return $out;
 	}
 
+	/**
+	 * @return mixed
+	 */
+	public static function REQUEST_URI() {
+		$out = $_SERVER['REQUEST_URI'];
+
+		return $out;
+	}
+
 }

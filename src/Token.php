@@ -16,7 +16,7 @@ class Token {
 	 * @return string
 	 * @throws \Exception
 	 */
-	public static function get( $length = 32 ) {
+	public static function generator( $length = 32 ) {
 		$out = Hash::base64( random_bytes( $length ), 1 );
 
 		return $out;

@@ -15,7 +15,7 @@ class Parser {
 	 *
 	 * @return string
 	 */
-	public static function clear( $string ) {
+	public static function clearData( $string ) {
 		$trim = trim( $string );
 		$out  = htmlspecialchars( $trim, ENT_QUOTES );
 
@@ -29,7 +29,7 @@ class Parser {
 	 *
 	 * @return string
 	 */
-	public static function normalize( $string ) {
+	public static function normalizeData( $string ) {
 		$replace = str_replace( ' ', '-', $string );
 		$out     = mb_strtolower( $replace, 'UTF-8' );
 

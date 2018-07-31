@@ -11,7 +11,7 @@ class Date {
 	/**
 	 * @return \DateTime
 	 */
-	private static function date() {
+	private static function createDate() {
 		$out = new \DateTime();
 
 		return $out;
@@ -34,8 +34,8 @@ class Date {
 	 *
 	 * @return int
 	 */
-	public static function timestamp() {
-		$out = self::date()->getTimestamp();
+	public static function getTimestamp() {
+		$out = self::createDate()->getTimestamp();
 
 		return $out;
 	}

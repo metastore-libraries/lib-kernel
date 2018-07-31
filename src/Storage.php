@@ -13,7 +13,7 @@ class Storage {
 	 *
 	 * @return bool|string
 	 */
-	public static function get( $src ) {
+	public static function getFile( $src ) {
 		$out = file_get_contents( $src );
 
 		return $out;
@@ -25,7 +25,7 @@ class Storage {
 	 *
 	 * @return mixed
 	 */
-	public static function info( $form, $meta ) {
+	public static function fileInfo( $form, $meta ) {
 		$out = $_FILES[ $form ][ $meta ];
 
 		return $out;

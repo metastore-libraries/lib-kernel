@@ -15,7 +15,7 @@ class cURL {
 	 *
 	 * @return mixed
 	 */
-	public static function url( $url ) {
+	public static function getURL( $url ) {
 		$ch = curl_init() or die( 'curl issue' );
 
 		curl_setopt( $ch, CURLOPT_URL, $url );
@@ -45,15 +45,15 @@ class cURL {
 		$refresh   = $time;
 
 		if ( ( ( $refresh ) < ( time() - filectime( $cacheFile ) ) || filesize( $cacheFile ) == 0 ) || ! $cache ) {
-			$out = Parser::json( self::url( $url ) );
+			$out = Parser::json( self::getURL( $url ) );
 
 			$handle = fopen( $cacheFile, 'wb' ) or die( 'no fopen' );
-			$json_cache = self::url( $url );
+			$json_cache = self::getURL( $url );
 
 			fwrite( $handle, $json_cache );
 			fclose( $handle );
 		} else {
-			$out = Parser::json( Storage::get( $cacheFile ) );
+			$out = Parser::json( Storage::getFile( $cacheFile ) );
 		}
 
 		return $out;

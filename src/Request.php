@@ -13,8 +13,8 @@ class Request {
 	 *
 	 * @return string
 	 */
-	public static function get( $id ) {
-		$out = Parser::clear( $_GET[ $id ] ?? '' ?: '' );
+	public static function getParam( $id ) {
+		$out = Parser::clearData( $_GET[ $id ] ?? '' ?: '' );
 
 		return $out;
 	}
@@ -24,8 +24,17 @@ class Request {
 	 *
 	 * @return string
 	 */
-	public static function post( $id ) {
-		$out = Parser::clear( $_POST[ $id ] );
+	public static function setParam( $id ) {
+		$out = Parser::clearData( $_POST[ $id ] );
+
+		return $out;
+	}
+
+	/**
+	 * @return string
+	 */
+	public static function getScheme() {
+		$out = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://' );
 
 		return $out;
 	}
