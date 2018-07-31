@@ -1,10 +1,10 @@
 <?php
 
-namespace METASTORE\App\Kernel;
+namespace MetaStore\App\Kernel;
 
 /**
  * Class Hash
- * @package METASTORE\App\Kernel
+ * @package MetaStore\App\Kernel
  */
 class Hash {
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace METASTORE\App\Kernel;
+namespace MetaStore\App\Kernel;
 
 /**
  * Class Parser
- * @package METASTORE\App\Kernel
+ * @package MetaStore\App\Kernel
  */
 class Parser {
 

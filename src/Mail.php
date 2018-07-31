@@ -1,10 +1,10 @@
 <?php
 
-namespace METASTORE\App\Kernel;
+namespace MetaStore\App\Kernel;
 
 /**
  * Class Mail
- * @package METASTORE\App\Kernel
+ * @package MetaStore\App\Kernel
  */
 class Mail {
 }
