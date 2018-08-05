@@ -14,7 +14,7 @@ class MetaCR {
 	 * @return mixed
 	 */
 	public static function getCR() {
-		$cr  = 'PHNwYW4gY2xhc3M9Im1ldGFkYXRhLWNyIj5NYWRlIHdpdGggPHNwYW4gY2xhc3M9ImZhcyBmYS1oZWFydCI+PC9zcGFuPiBieSA8YSB0aXRsZT0iV2ViIEFwcGxpY2F0aW9uIERldmVsb3BtZW50IENvbXBhbnkiIGhyZWY9Imh0dHBzOi8vbWV0YWRhdGEuZm91bmRhdGlvbi8iPjxzdHJvbmc+TUVUQURBVEE8L3N0cm9uZz48L2E+PC9zcGFuPg==';
+		$cr  = 'PHNwYW4gY2xhc3M9Im1ldGEtY3IiIHN0eWxlPSJ0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyI+TWFkZSB3aXRoIDxzcGFuIGNsYXNzPSJmYXMgZmEtaGVhcnQiIHN0eWxlPSJjb2xvcjogI2ZlNmUzYTsiPjwvc3Bhbj4gYnkgPGEgdGl0bGU9IldlYiBBcHBsaWNhdGlvbiBEZXZlbG9wbWVudCBDb21wYW55IiBocmVmPSJodHRwczovL21ldGFkYXRhLmZvdW5kYXRpb24vIj48c3Ryb25nPk1FVEFEQVRBPC9zdHJvbmc+PC9hPjwvc3Bhbj4=';
 		$out = Hash::base64( $cr );
 
 		return $out;
