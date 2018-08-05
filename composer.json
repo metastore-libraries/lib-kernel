@@ -25,7 +25,8 @@
 		"source": "https://gitlab.com/metastore/apps/app-kernel"
 	},
 	"require": {
-		"php": ">=7.2.0"
+		"php": ">=7.2.0",
+		"ext-curl": "*"
 	},
 	"autoload": {
 		"psr-4": {
