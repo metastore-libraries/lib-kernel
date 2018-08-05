@@ -12,17 +12,21 @@ class cURL {
 	 * cURL: Get URL.
 	 *
 	 * @param $url
+	 * @param string $headers
 	 *
 	 * @return mixed
 	 */
-	public static function getURL( $url ) {
+	public static function getURL( $url, $headers = '' ) {
 		$ch = curl_init() or die( 'curl issue' );
 
-		curl_setopt( $ch, CURLOPT_URL, $url );
-		curl_setopt( $ch, CURLOPT_POST, false );
-		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-		curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
-		curl_setopt( $ch, CURLOPT_USERAGENT, 'Mozilla/5.0' );
+		curl_setopt_array( $ch, [
+			CURLOPT_URL            => $url,
+			CURLOPT_POST           => false,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_SSL_VERIFYPEER => false,
+			CURLOPT_USERAGENT      => 'Mozilla/5.0',
+			CURLOPT_HTTPHEADER     => $headers,
+		] );
 
 		$out = curl_exec( $ch );
 		curl_close( $ch );
