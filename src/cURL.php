@@ -44,7 +44,7 @@ class cURL {
 	 *
 	 * @return mixed|string
 	 */
-	public static function getJSON( $url, $headers = '', $cache = 1, $time = 60 * 60 ) {
+	public static function getJSON( $url, $headers = '', $cache = 1, $time = 2 * 60 * 60 ) {
 		$cachePath = Route::DOCUMENT_ROOT() . 'storage/cache/';
 		$cacheFile = $cachePath . Hash::get( 'md5', $url );
 		$refresh   = $time;
