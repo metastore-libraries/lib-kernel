@@ -19,14 +19,16 @@ class cURL {
 	public static function getURL( $url, $headers = '' ) {
 		$ch = curl_init() or die( 'curl issue' );
 
-		curl_setopt_array( $ch, [
-			CURLOPT_URL            => $url,
-			CURLOPT_POST           => 0,
-			CURLOPT_RETURNTRANSFER => 1,
-			CURLOPT_SSL_VERIFYPEER => 0,
-			CURLOPT_USERAGENT      => 'Mozilla/5.0',
-			CURLOPT_HTTPHEADER     => $headers,
-		] );
+		curl_setopt( $ch, CURLOPT_URL, $url );
+		curl_setopt( $ch, CURLOPT_POST, 0 );
+		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+		curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0 );
+		curl_setopt( $ch, CURLOPT_USERAGENT, 'Mozilla/5.0' );
+
+		if ( ! empty( $headers ) ) {
+			curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers );
+		}
+
 
 		$out = curl_exec( $ch );
 		curl_close( $ch );
@@ -49,7 +51,8 @@ class cURL {
 		$cacheFile = $cachePath . Hash::get( 'md5', $url );
 		$refresh   = $time;
 
-		if ( ( ( $refresh ) < ( time() - filectime( $cacheFile ) ) || filesize( $cacheFile ) == 0 ) || ! $cache ) {
+		if ( ( ! file_exists( $cacheFile ) || ( time() - filectime( $cacheFile ) ) > ( $refresh ) || filesize( $cacheFile ) == 0 )
+		     || ! $cache ) {
 			$out = Parser::json( self::getURL( $url, $headers ) );
 
 			$handle = fopen( $cacheFile, 'wb' ) or die( 'no fopen' );
