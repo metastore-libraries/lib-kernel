@@ -9,47 +9,29 @@ namespace MetaStore\App\Kernel;
 class Session {
 
 	/**
-	 * @param $savePath
-	 * @param $sessionName
-	 */
-	public static function open( $savePath, $sessionName ) {
-		( new \SessionHandler )->open( $savePath, $sessionName );
-	}
-
-	/**
+	 * @param $name
+	 * @param $value
 	 *
+	 * @return mixed
 	 */
-	public static function close() {
-		( new \SessionHandler )->close();
+	public static function set( $name, $value ) {
+		return $_SESSION[ $name ] = $value;
 	}
 
 	/**
-	 * @param $sessionID
+	 * @param $name
+	 *
+	 * @return mixed
 	 */
-	public static function read( $sessionID ) {
-		( new \SessionHandler )->read( $sessionID );
+	public static function get( $name ) {
+		return $_SESSION[ $name ];
 	}
 
 	/**
-	 * @param $sessionID
-	 * @param $data
+	 * @param $name
 	 */
-	public static function write( $sessionID, $data ) {
-		( new \SessionHandler )->write( $sessionID, $data );
-	}
-
-	/**
-	 * @param $sessionID
-	 */
-	public static function destroy( $sessionID ) {
-		( new \SessionHandler )->destroy( $sessionID );
-	}
-
-	/**
-	 * @param $lifetime
-	 */
-	public static function gc( $lifetime ) {
-		( new \SessionHandler )->gc( $lifetime );
+	public static function destroy( $name ) {
+		unset( $_SESSION[ $name ] );
 	}
 
 }
