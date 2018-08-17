@@ -21,7 +21,7 @@ class Route {
 	 * @return mixed
 	 */
 	public static function DOCUMENT_ROOT() {
-		$out = ( defined( 'ABSPATH' ) ) ? ABSPATH . '/' : $_SERVER['DOCUMENT_ROOT'];
+		$out = ( defined( 'ABSPATH' ) ) ? ABSPATH . DIRECTORY_SEPARATOR : $_SERVER['DOCUMENT_ROOT'];
 
 		return $out;
 	}
