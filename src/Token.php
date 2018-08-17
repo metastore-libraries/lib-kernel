@@ -17,7 +17,7 @@ class Token {
 	 * @throws \Exception
 	 */
 	public static function generator( $length = 32 ) {
-		$out = Hash::base64( random_bytes( $length ), 1 );
+		$out = Hash::base64( Route::HTTP_HOST() . random_bytes( $length ), 1 );
 
 		return $out;
 	}

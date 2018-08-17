@@ -30,7 +30,10 @@ class Hash {
 	 * @throws \Exception
 	 */
 	public static function generator( $algo = 'crc32b', $length = 32 ) {
-		$out = self::get( $algo, Date::getTimestamp() . uniqid( bin2hex( random_bytes( $length ) ), true ) );
+		$host      = Route::HTTP_HOST();
+		$timestamp = Date::getTimestamp();
+		$uniqid    = uniqid( bin2hex( random_bytes( $length ) ), true );
+		$out       = self::get( $algo, $host . $timestamp . $uniqid );
 
 		return $out;
 	}
