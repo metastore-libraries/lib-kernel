@@ -25,7 +25,7 @@ class Request {
 	 * @return string
 	 */
 	public static function setParam( $id ) {
-		$out = Parser::clearData( $_POST[ $id ] );
+		$out = Parser::clearData( $_POST[ $id ] ?? '' ?: '' );
 
 		return $out;
 	}

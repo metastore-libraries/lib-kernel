@@ -26,7 +26,7 @@ class Storage {
 	 * @return mixed
 	 */
 	public static function fileInfo( $form, $meta ) {
-		$out = $_FILES[ $form ][ $meta ];
+		$out = $_FILES[ $form ][ $meta ] ?? '' ?: '';
 
 		return $out;
 	}
