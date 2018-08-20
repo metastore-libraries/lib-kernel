@@ -19,10 +19,10 @@
 	],
 	"support": {
 		"email": "support@metastore.pro",
-		"issues": "https://gitlab.com/metastore/apps/app-kernel/issues",
+		"issues": "https://gitlab.com/metastore/libraries/lib-kernel/issues",
 		"forum": "https://webmasters.community",
 		"wiki": "https://webmasters.wiki",
-		"source": "https://gitlab.com/metastore/apps/app-kernel"
+		"source": "https://gitlab.com/metastore/libraries/lib-kernel"
 	},
 	"require": {
 		"php": ">=7.2",
