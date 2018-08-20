@@ -1,5 +1,5 @@
 {
-	"name": "metastore/app-kernel",
+	"name": "metastore/lib-kernel",
 	"type": "library",
 	"description": "PHP Kernel for METADATA projects.",
 	"license": "GPL-3.0-or-later",
