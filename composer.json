@@ -2,7 +2,9 @@
 	"name": "metastore/lib-kernel",
 	"type": "library",
 	"description": "PHP Kernel for METADATA projects.",
-	"license": "GPL-3.0-or-later",
+	"license": [
+		"GPL-3.0-or-later"
+	],
 	"homepage": "https://metastore.pro",
 	"keywords": [
 		"metadata",
